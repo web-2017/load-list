@@ -1,0 +1,65 @@
+ul.abc-list__byletter
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link АбакталАбакталАбактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+      li.abc-list__byletter-item: a.abc-list__byletter-link Абактал
+
+
+<script>
+function medicineList(){
+
+    let ul = document.querySelectorAll('.abc-list__byletter');
+    let li = document.querySelectorAll('.abc-list__byletter-item');
+    let btn = document.querySelector('.abc-list__button');
+
+    if(li.length > 35 ) {
+        
+        for (let i = 0; i < li.length; i++) {
+            (i > 35) ? li[i].classList.add('abc-list__byletter-item_ishiden') : ''
+        }
+
+    } else {
+        btn.style.display = 'none'
+    }
+
+    function showItems() { 
+        let hiddenItems = document.querySelectorAll('.abc-list__byletter-item_ishiden');
+        (hiddenItems.length) ? btn.style.display = 'block' : btn.style.display = 'none';
+
+        if(hiddenItems.length > 53) {
+            for (let i = 0; i < 53; i++) {
+                hiddenItems[i].classList.remove('abc-list__byletter-item_ishiden');
+            }
+        } else {
+            for (let i = 0; i < hiddenItems.length; i++) {
+                hiddenItems[i].classList.remove('abc-list__byletter-item_ishiden');
+                btn.style.display = 'none';
+            }
+        }
+    };
+
+
+    btn.addEventListener('click', function(){
+        showItems();
+    });
+
+};
+
+medicineList();
+</script>
